@@ -2,12 +2,12 @@ import Notiflix from 'notiflix';
 
 function fetchCountries(name){
     return fetch(
-        `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flag,languages`
+        `https://restcountries.com/v3.1/name/${name}?fields=name,capital,population,flags,languages`
     ).then((response)=>{
         if(!response.ok){
              throw new Error(
-                Notiflix.Notify.failure('Too many matches found. Please enter a more specific name.')
-             )
+                Notiflix.Notify.failure('Oops, there is no country with that name.')
+             );
         }
         return response.json();
     });
