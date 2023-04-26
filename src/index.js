@@ -34,14 +34,20 @@ const onInput=debounce(evt=>{
       }
 
       if(arrLength>1){
+        
+         list.innerHTML="";
+         return createMarkupAll(countries);
+      }
+
+      if(arrLength===1){
+        
          container.innerHTML="";
          return createMarkup(countries);
       }
 
-      if(arrLength===1){
-         list.innerHTML="";
-         return createMarkupAll(countries);
-      }
+      
+
+      
    }
 
   function createMarkup(countries){
