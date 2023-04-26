@@ -29,10 +29,12 @@ const onInput=debounce(evt=>{
       const arrLength=countries.length;
       if(arrLength>10){
          Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
+         container.innerHTML="";
+         list.innerHTML="";
       }
 
       if(arrLength>1){
-         list.innerHTML="";
+         container.innerHTML="";
          return createMarkup(countries);
       }
 
