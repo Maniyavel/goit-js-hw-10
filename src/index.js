@@ -15,8 +15,9 @@ import './css/styles.css';
 const onInput=debounce(evt=>{
    const name=evt.target.value.trim();
    if (!name){
-      list.innerHTML="";
+      
       container.innerHTML="";
+      list.innerHTML="";
       return;
    }
 
@@ -31,6 +32,7 @@ const onInput=debounce(evt=>{
          Notiflix.Notify.info('Too many matches found. Please enter a more specific name.');
          container.innerHTML="";
          list.innerHTML="";
+         return;
       }
 
       if(arrLength>1){
