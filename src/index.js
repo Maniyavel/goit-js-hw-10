@@ -69,7 +69,8 @@ function createMarkupAll(countries){
       <h2 class="country-title">${country.name.official}</h2>
       </li>
       `
-   })
+   }).join('');
+   list.innerHTML = markup;
 }
 
 input.addEventListener('input', onInput);
