@@ -37,13 +37,13 @@ const onInput=debounce(evt=>{
 
       if(arrLength>1){
         
-         list.innerHTML="";
+         container.innerHTML="";
+         
          return createMarkupAll(countries);
       }
 
       if(arrLength===1){
-        
-         container.innerHTML="";
+         list.innerHTML="";
          return createMarkup(countries);
       }
 
