@@ -50,9 +50,10 @@ const onInput=debounce(evt=>{
       <img  src="${country.flags.svg}" width="60" height="30" alt="flag of ${country.name.official}">
       <h2 class="country-title">${country.name.official}</h2>
       </div>
-      <p><b>Capital</b>:${country.capital}</p>
-      <p><b>Population</b>:${country.population}</p>
-      <p><b>Languages</b>:${Object.value(country.languages)}</p>`
+      <ul>
+      <li><span>Capital</span>:${country.capital}</li>
+      <li><span>Population</span>:${country.population}</li>
+      <li><span>Languages</span>:${Object.value(country.languages)}</li>`
    }).join('');
     container.innerHTML = markup;
 }
