@@ -33,36 +33,26 @@ const onInput=debounce(evt=>{
          container.innerHTML="";
          list.innerHTML="";
          return;
-      }
-
-      if(arrLength>1){
+      } else if(arrLength>1||arrLength<=10){
         
          container.innerHTML="";
          
          return createMarkupAll(countries);
-      }
-
-      if(arrLength===1){
+      } else if(arrLength===1){
          list.innerHTML="";
          return createMarkup(countries);
       }
-
-      
-
-      
    }
 
   function createMarkup(countries){
    const markup=countries.map(country=>{
-      return
-      `<div class="country">
+      return`<div class="country">
       <img  src='${country.flags.svg}  width="50" height="30" alt="flag of ${country.name.official}'>
       <h2 class="country-title">${country.name.official}</h2>
       </div>
       <p><b>Capital</b>:${country.capital}</p>
       <p><b>Population</b>:${country.population}</p>
-      <p><b>Languages</b>:${Object.value(country.languages)}</p>
-      `
+      <p><b>Languages</b>:${Object.value(country.languages)}</p>`
    })
   
     .join('');
@@ -71,12 +61,10 @@ const onInput=debounce(evt=>{
 
 function createMarkupAll(countries){
    const markup=countries.map(country=>{
-      return 
-      `<li class="country">
+      return `<li class="country">
       <img src="${country.flags.svg}  width="50" height="30" alt="flag of ${country.name.official}'>
       <h2 class="country-title">${country.name.official}</h2>
-      </li>
-      `
+      </li>`
    }).join('');
    list.innerHTML = markup;
 }
