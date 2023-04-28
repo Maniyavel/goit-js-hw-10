@@ -15,7 +15,6 @@ import './css/styles.css';
 const onInput=debounce(evt=>{
    const name=evt.target.value.trim();
    if (!name){
-      
       container.innerHTML="";
       list.innerHTML="";
       return;
@@ -33,37 +32,34 @@ const onInput=debounce(evt=>{
          container.innerHTML="";
          list.innerHTML="";
          return;
-      } else if(arrLength>1||arrLength<=10){
-        
-         container.innerHTML="";
-         
-         return createMarkupAll(countries);
       } else if(arrLength===1){
          list.innerHTML="";
          return createMarkup(countries);
-      }
+      }else if(arrLength>1&&arrLength<=10){
+         container.innerHTML="";
+         return createMarkupAll(countries);
+      } 
    }
 
   function createMarkup(countries){
    const markup=countries.map(country=>{
       return `<div class="country">
-      <img  src="${country.flags.svg}" width="60" height="30" alt="flag of ${country.name.official}">
-      <h2 class="country-title">${country.name.official}</h2>
-      </div>
+      <img src="${country.flags.svg}" width="60" height="30" alt="flag of ${country.name.official}">
+      <h2 class="country-title">${country.name.official}</h2></div>
       <ul>
       <li><span>Capital</span>:${country.capital}</li>
       <li><span>Population</span>:${country.population}</li>
-      <li><span>Languages</span>:${Object.value(country.languages)}</li>`
+      <li><span>Languages</span>:${Object.value(country.languages)}</li></ul>`
    }).join('');
     container.innerHTML = markup;
 }
 
 function createMarkupAll(countries){
    const markup=countries.map(country=>{
-      return `<li class="country">
+      return `<div class="country">
       <img src="${country.flags.svg}"  width="60" height="30" alt="flag of ${country.name.official}">
       <h2 class="country-title">${country.name.official}</h2>
-      </li>`
+      </div>`
    }).join('');
    list.innerHTML = markup;
 }
