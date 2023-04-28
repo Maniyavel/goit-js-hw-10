@@ -49,7 +49,7 @@ const onInput=debounce(evt=>{
       <ul>
       <li><span>Capital</span>:${country.capital}</li>
       <li><span>Population</span>:${country.population}</li>
-      <li><span>Languages</span>:${Object.value(country.languages)}</li></ul>`
+      <li><span>Languages</span>:${Object.values(country.languages)}</li></ul>`
    }).join('');
     container.innerHTML = markup;
 }
