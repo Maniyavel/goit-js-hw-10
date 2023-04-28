@@ -32,10 +32,10 @@ const onInput=debounce(evt=>{
          container.innerHTML="";
          list.innerHTML="";
          return;
-      }else if(arrLength===1){
+      } if(arrLength===1){
          list.innerHTML="";
          return createMarkup(countries);
-      }else if(arrLength>1 && arrLength<=10){
+      } if(arrLength>1 && arrLength<=10){
          container.innerHTML="";
          return createMarkupAll(countries);
       } 
